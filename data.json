@@ -1,0 +1,9 @@
+{
+    "id": "ManiacJokers",
+    "name": "Maniac",
+    "author": ["Astrax"],
+    "description": "A mix of Quality of Life and Joker additions that still match the vanilla feel.",
+    "prefix": "mcjk",
+    "main_file": "source/main.lua",
+    "version": "0.0.1"
+}
