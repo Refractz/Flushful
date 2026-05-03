@@ -155,4 +155,36 @@ SMODS.PokerHand {
         return {}
     end,
 }
-
+SMODS.PokerHand {
+    key = "Flush High",
+    chips = 100,
+    mult = 4,
+    l_chips = 50,
+    l_mult = 2,
+    visible = false,
+    example = {
+        { 'D_9',    false },
+        { 'S_K',    false },
+        { 'C_2',    false },
+        { 'S_9',    true, enhancement = "m_wild" },
+        { 'H_3',    false },
+    },
+    loc_txt = {
+        ['en-us'] = {
+            name = "Flush High",
+            description = {
+                "Scores if you play a high card with the Wildcard enhancement",
+                "Can be played with up to 4 unscored cards",
+                "(Can not be upgraded)"
+            }
+        }
+    },
+    evaluate = function(parts, hand)
+        if not next(parts._highest) then return {} end
+        local card = parts._highest[1]
+        if SMODS.has_any_suit(card[1]) then
+            return { card }
+        end
+        return {}
+    end,
+}

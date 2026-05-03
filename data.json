@@ -1,9 +1,9 @@
 {
-    "id": "ManiacJokers",
-    "name": "Maniac",
-    "author": ["Astrax"],
-    "description": "A mix of Quality of Life and Joker additions that still match the vanilla feel.",
+    "id": "Flushful",
+    "name": "Flushful",
+    "author": ["Refractz"],
+    "description": "Adds new flush varients to the game. This is my first mod so if you find any issues/have suggestions contact me on discord - Refractz",
     "prefix": "mcjk",
     "main_file": "source/main.lua",
-    "version": "0.0.1"
+    "version": "1.0.0"
 }
