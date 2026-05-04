@@ -192,7 +192,7 @@ SMODS.PokerHand {
     key = "777",
     chips = 777,
     mult = 7,
-    l_chips = 77,   
+    l_chips = 77,
     l_mult = 7,
     visible = true,
     example = {
@@ -216,16 +216,9 @@ SMODS.PokerHand {
         if not next(parts._3) then return {} end
         local cards = parts._3[1]
         local b = {}
-        local count = 0
         for i, card in ipairs(cards) do
-            if SMODS.has_enhancement(card, m_lucky) and card:get_id() == 7 and count <= 3 then
-                count = count + 1
-                b[#b + 1] = card
-            end
+            if not (SMODS.has_enhancement(card, "m_lucky") and card:get_id() == 7) then return {} end
         end
-        if count == 3 then
-            return { b }
-        end
-        return {}
+        return { cards }
     end,
 }
