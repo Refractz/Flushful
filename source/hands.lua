@@ -208,7 +208,7 @@ SMODS.PokerHand {
             description = {
                 "Scores if you play a 3 7 cards with the Lucky enhancement",
                 "Can be played with up to 2 unscored cards",
-                "(Can not be upgraded)"
+                "(10% Chance to level up every time played)"
             }
         }
     },
