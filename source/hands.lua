@@ -218,7 +218,7 @@ SMODS.PokerHand {
         local b = {}
         local count = 0
         for i, card in ipairs(cards) do
-            if SMODS.has_enhancement(cards[card], m_lucky) and cards[card]:get_id() == 7 and count <= 3 then
+            if SMODS.has_enhancement(card, m_lucky) and card:get_id() == 7 and count <= 3 then
                 count = count + 1
                 b[#b + 1] = card
             end
