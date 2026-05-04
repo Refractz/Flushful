@@ -204,7 +204,7 @@ SMODS.PokerHand {
     },
     loc_txt = {
         ['en-us'] = {
-            name = "Flush High",
+            name = "777",
             description = {
                 "Scores if you play a 3 7 cards of the same Suit with the Lucky enhancement",
                 "Can be played with up to 2 unscored cards",
