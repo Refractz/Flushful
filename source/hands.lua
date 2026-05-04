@@ -206,7 +206,7 @@ SMODS.PokerHand {
         ['en-us'] = {
             name = "777",
             description = {
-                "Scores if you play a 3 7 cards of the same Suit with the Lucky enhancement",
+                "Scores if you play a 3 7 cards with the Lucky enhancement",
                 "Can be played with up to 2 unscored cards",
                 "(Can not be upgraded)"
             }
@@ -217,9 +217,10 @@ SMODS.PokerHand {
         local cards = parts._3[1]
         local v = {}
         for v = 1, 3 do
-            if SMODS.has_enhancement(cards[v], m_lucky) then
+            if SMODS.has_enhancement(cards[v], m_lucky) and cards[v]:get_id() == 7 then
                 v[v] = true
             end
+
         end
         if v[1] and v[2] and v[3] then
             return { cards }
