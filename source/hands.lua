@@ -188,3 +188,41 @@ SMODS.PokerHand {
         return {}
     end,
 }
+SMODS.PokerHand {
+    key = "777",
+    chips = 777,
+    mult = 7,
+    l_chips = 77,
+    l_mult = 7,
+    visible = false,
+    example = {
+        { 'D_7',    true, enhancement = "m_lucky" },
+        { 'S_K',    false },
+        { 'D_7',    true, enhancement = "m_lucky" },
+        { 'D_7',    true, enhancement = "m_lucky" },
+        { 'H_3',    false },
+    },
+    loc_txt = {
+        ['en-us'] = {
+            name = "Flush High",
+            description = {
+                "Scores if you play a 3 7 cards of the same Suit with the Lucky enhancement",
+                "Can be played with up to 2 unscored cards",
+                "(Can not be upgraded)"
+            }
+        }
+    },
+    evaluate = function(parts, hand)
+        if not next(parts._3) then return {} end
+        local cards = parts._3[1]
+        local v = {}
+        for v = 1, 3 do
+            if SMODS.has_enhancement(cards[v], m_lucky) then
+                v[v] = true
+            end
+        end
+        if v[1] and v[2] and v[3] then
+            return { cards }
+        end
+    end,
+}
