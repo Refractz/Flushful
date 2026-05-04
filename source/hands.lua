@@ -1,6 +1,6 @@
 
 SMODS.PokerHand {
-    key = 'Pair Flush',
+    key = 'mcjk_Pair_Flush',
     chips = 20,
     mult = 4,
     l_chips = 15,
@@ -37,7 +37,7 @@ SMODS.PokerHand {
 }
 
 SMODS.PokerHand {
-    key = 'Flush Three',
+    key = 'mcjk_Flush_Three',
     chips = 30,
     mult = 5,
     l_chips = 20,
@@ -74,7 +74,7 @@ SMODS.PokerHand {
 }
 
 SMODS.PokerHand {
-    key = 'Two Pair Flush',
+    key = 'mcjk_Two_Pair_Flush',
     chips = 40,
     mult = 4,
     l_chips = 20,
@@ -120,7 +120,7 @@ SMODS.PokerHand {
 
 }
 SMODS.PokerHand {
-    key = 'Flush Four',
+    key = 'mcjk_Flush_Four',
     chips = 90,
     mult = 8,
     l_chips = 40,
@@ -156,7 +156,7 @@ SMODS.PokerHand {
     end,
 }
 SMODS.PokerHand {
-    key = "Flush High",
+    key = "mcjk_Flush_High",
     chips = 100,
     mult = 4,
     l_chips = 50,
@@ -171,7 +171,7 @@ SMODS.PokerHand {
     },
     loc_txt = {
         ['en-us'] = {
-            name = "Flush High",
+            name = "Flush_High",
             description = {
                 "Scores if you play a high card with the Wildcard enhancement",
                 "Can be played with up to 4 unscored cards",
@@ -220,5 +220,42 @@ SMODS.PokerHand {
             if not (SMODS.has_enhancement(card, "m_lucky") and card:get_id() == 7) then return {} end
         end
         return { cards }
+    end,
+}
+SMODS.PokerHand {
+    key = "mcjk_Wild_Flush",
+    chips = 200,
+    mult = 14,
+    l_chips = 50,
+    l_mult = 6,
+    visible = true,
+    example = {
+        { 'C_2',    true, enhancement = "m_wild" },
+        { 'H_7',    true, enhancement = "m_wild"},
+        { 'D_9',    true, enhancement = "m_wild" },
+        { 'S_7',    true, enhancement = "m_wild" },
+        {'D_4',    true, enhancement = "m_wild"},
+    },
+    loc_txt = {
+        ['en-us'] = {
+            name = "Wild Flush",
+            description = {
+                "Scores if you play 5 wildcards",
+                "Can't be played with unscored cards",
+                "(levels up with flush)"
+            }
+        }
+    },
+    evaluate = function(parts, hand)
+        if not next(parts._flush) then return {} end
+        local cards = parts._flush[1]
+        local b = {}
+        for i, card in ipairs(cards) do
+            if #b <= 5 and SMODS.has_enhancement(card, "m_wild") then
+                b[#b + 1] = card
+            end
+
+        end
+        if #b == 5 then return{b} else return {} end
     end,
 }
