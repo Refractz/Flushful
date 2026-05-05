@@ -5,5 +5,7 @@
     "description": "Adds new flush varients to the game. This is my first mod so if you find any issues/have suggestions contact me on discord - Refractz",
     "prefix": "mcjk",
     "main_file": "source/main.lua",
+    "badge_colour": "8254FF",
+    "badge_text_colour": "7DC7FF",
     "version": "1.0.0"
 }

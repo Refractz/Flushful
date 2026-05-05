@@ -171,7 +171,7 @@ SMODS.PokerHand {
     },
     loc_txt = {
         ['en-us'] = {
-            name = "Flush_High",
+            name = "Flush High",
             description = {
                 "Scores if you play a high card with the Wildcard enhancement",
                 "Can be played with up to 4 unscored cards",

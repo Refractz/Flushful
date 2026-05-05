@@ -1,4 +1,21 @@
+
+SMODS.Atlas {
+    key = 'jokeratlas',
+    path = 'jokers/joker_atlas.png',
+    px = 71,
+    py = 95
+}
+
+
+
 SMODS.load_file("source/hands.lua")()
+
+local jokers_src = SMODS.NFS.getDirectoryItems(SMODS.current_mod.path .. "source/jokers")
+for _, file in ipairs(jokers_src) do
+    assert(SMODS.load_file("source/jokers/".. file))()
+end
+
+
 
 SMODS.current_mod.calculate = function(self, context)
     if context.using_consumeable then
