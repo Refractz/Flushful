@@ -1,0 +1,30 @@
+{
+    "Lua.diagnostics.globals": [
+        "SMODS",
+        "G",
+        "Card",
+        "localize",
+        "Event",
+        "HEX",
+        "play_sound",
+        "delay",
+        "pseudorandom_element",
+        "pseudoseed",
+        "CardSleeves",
+        "DynaText",
+        "love",
+        "NFS",
+        "check_for_unlock",
+        "attention_text",
+        "mix_colors",
+        "sendDebugMessage",
+        "Particles",
+        "EMPTY",
+        "darken",
+        "create_toggle"
+    ],
+    "Lua.workspace.library": [
+        "C:\\Users\\chris\\AppData\\Roaming\\Balatro\\Mods\\Steamodded",
+        "C:\\Users\\chris\\AppData\\Roaming\\Balatro\\Mods\\lovely\\dump",
+    ]
+}
